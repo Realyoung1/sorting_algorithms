@@ -1,5 +1,14 @@
+#include <stdbool.h>
+#include <sys/stat.h>
+#include <limits.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <string.h>
 #include <stdio.h>
-#include "sort.h"
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <stdlib.h>
 
 /**
  * print_list - Prints a list of integers
@@ -8,15 +17,15 @@
  */
 void print_list(const listint_t *list)
 {
-    int i;
+    int j;
 
-    i = 0;
+    j = 0;
     while (list)
     {
-        if (i > 0)
+        if (j > 0)
             printf(", ");
         printf("%d", list->n);
-        ++i;
+        ++j;
         list = list->next;
     }
     printf("\n");
