@@ -1,14 +1,5 @@
-#include <stdbool.h>
-#include <sys/stat.h>
-#include <limits.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <string.h>
-#include <stdio.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <errno.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * print_array - Prints an array of integers
@@ -18,15 +9,15 @@
  */
 void print_array(const int *array, size_t size)
 {
-    size_t j;
+    size_t i;
 
-    j = 0;
-    while (array && j < size)
+    i = 0;
+    while (array && i < size)
     {
-        if (j > 0)
+        if (i > 0)
             printf(", ");
-        printf("%d", array[j]);
-        ++j;
+        printf("%d", array[i]);
+        ++i;
     }
     printf("\n");
 }
