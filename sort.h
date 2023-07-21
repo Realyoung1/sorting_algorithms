@@ -1,16 +1,7 @@
 #ifndef SORT_H
 #define SORT_H
 
-#include <stdbool.h>
-#include <sys/stat.h>
-#include <limits.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <string.h>
 #include <stdio.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <errno.h>
 #include <stdlib.h>
 
 /* Comparison direction macros for bitonic sort */
@@ -29,11 +20,11 @@ typedef enum bool
 } bool;
 
 /**
- * struct listint_s - Doubly linked list nodess
+ * struct listint_s - Doubly linked list node
  *
- * @n: Integer stored in the nodess
- * @prev: Pointer to the previous element of the listss
- * @next: Pointer to the next element of the listss
+ * @n: Integer stored in the node
+ * @prev: Pointer to the previous element of the list
+ * @next: Pointer to the next element of the list
  */
 typedef struct listint_s
 {
