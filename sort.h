@@ -28,11 +28,11 @@ typedef enum bool
 } bool;
 
 /**
- * struct listint_s - Doubly linked list node
+ * struct listint_s - Doubly linked list nodess
  *
- * @n: Integer stored in the node
- * @prev: Pointer to the previous element of the list
- * @next: Pointer to the next element of the list
+ * @n: Integer stored in the nodess
+ * @prev: Pointer to the previous element of the listss
+ * @next: Pointer to the next element of the listss
  */
 typedef struct listint_s
 {
