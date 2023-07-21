@@ -35,9 +35,10 @@ void swap_ints(int *a, int *b)
  *
  * Description: Uses the Knuth interval sequence.
  */
+
 void shell_sort(int *array, size_t size)
 {
-	size_t gap, i, j;
+	size_t gap, j, k;
 
 	if (array == NULL || size < 2)
 		return;
@@ -47,13 +48,13 @@ void shell_sort(int *array, size_t size)
 
 	for (; gap >= 1; gap /= 3)
 	{
-		for (i = gap; i < size; i++)
+		for (j = gap; j < size; j++)
 		{
-			j = i;
-			while (j >= gap && array[j - gap] > array[j])
+			k = j;
+			while (k >= gap && array[k - gap] > array[k])
 			{
-				swap_ints(array + j, array + (j - gap));
-				j -= gap;
+				swap_ints(array + k, array + (k - gap));
+				k -= gap;
 			}
 		}
 		print_array(array, size);
