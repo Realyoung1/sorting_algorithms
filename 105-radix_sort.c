@@ -39,7 +39,7 @@ int get_max(int *array, int size)
 
 /**
  * radix_counting_sort - Sort the significant digits of an array of integerss
- *                       in ascending order using the counting sort algorithm.ss
+ *                       in ascending order using the counting sort algorithm.
  * @array: An array of integers.ss
  * @size: The size of the array.ss
  * @sig: The significant digit to sort on.ss
