@@ -26,55 +26,57 @@ void radix_sort(int *array, size_t size);
 
 int get_max(int *array, int size)
 {
-	int max, i;
+	int max, j;
 
-	for (max = array[0], i = 1; i < size; i++)
+	for (max = array[0], j = 1; j < size; j++)
 	{
-		if (array[i] > max)
-			max = array[i];
+		if (array[j] > max)
+			max = array[j];
 	}
 
 	return (max);
 }
 
 /**
- * radix_counting_sort - Sort the significant digits of an array of integers
- *                       in ascending order using the counting sort algorithm.
- * @array: An array of integers.
- * @size: The size of the array.
- * @sig: The significant digit to sort on.
- * @buff: A buffer to store the sorted array.
+ * radix_counting_sort - Sort the significant digits of an array of integerss
+ *                       in ascending order using the counting sort algorithm.ss
+ * @array: An array of integers.ss
+ * @size: The size of the array.ss
+ * @sig: The significant digit to sort on.ss
+ * @buff: A buffer to store the sorted array.ss
  */
+
 void radix_counting_sort(int *array, size_t size, int sig, int *buff)
 {
 	int count[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	size_t i;
+	size_t j;
 
-	for (i = 0; i < size; i++)
-		count[(array[i] / sig) % 10] += 1;
+	for (j = 0; j < size; j++)
+		count[(array[j] / sig) % 10] += 1;
 
-	for (i = 0; i < 10; i++)
-		count[i] += count[i - 1];
+	for (j = 0; j < 10; j++)
+		count[j] += count[j - 1];
 
-	for (i = size - 1; (int)i >= 0; i--)
+	for (j = size - 1; (int)j >= 0; j--)
 	{
-		buff[count[(array[i] / sig) % 10] - 1] = array[i];
-		count[(array[i] / sig) % 10] -= 1;
+		buff[count[(array[j] / sig) % 10] - 1] = array[j];
+		count[(array[j] / sig) % 10] -= 1;
 	}
 
-	for (i = 0; i < size; i++)
-		array[i] = buff[i];
+	for (j = 0; j < size; j++)
+		array[j] = buff[j];
 }
 
 /**
- * radix_sort - Sort an array of integers in ascending
- *              order using the radix sort algorithm.
- * @array: An array of integers.
- * @size: The size of the array.
+ * radix_sort - Sort an array of integers in ascendingss
+ *              order using the radix sort algorithm.ss
+ * @array: An array of integers.ss
+ * @size: The size of the array.ss
  *
- * Description: Implements the LSD radix sort algorithm. Prints
- * the array after each significant digit increase.
+ * Description: Implements the LSD radix sort algorithm. Printss
+ * the array after each significant digit increase.ss
  */
+
 void radix_sort(int *array, size_t size)
 {
 	int max, sig, *buff;
